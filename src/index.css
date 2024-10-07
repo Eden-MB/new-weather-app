@@ -1,0 +1,73 @@
+
+.Weather {
+    max-width: 700px;
+    margin: 80px auto;
+    border: 1px solid #dadde1;
+    padding: 50px;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+ul {
+    color: rgb(135, 135, 135);
+}
+
+form {
+margin-bottom: 30px;
+margin-top: 30px;
+}
+
+input[type="search"] {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+   background-color: rgba(245, 240, 231, 0.833);
+   border: none;
+   
+}
+
+input:focus {
+    background-color: lightgray;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 11px;
+    font-size: 17px;
+    border-radius: 13px;
+    border: none;
+}
+
+.icon{ 
+    width: 50px;
+}
+
+li {
+    list-style: none;
+}
+
+.temperature h1 {
+    position: relative;
+    left: 110px;
+    bottom: 20px;
+    font-weight:bold;
+    font-size: 45px;
+    color: rgb(62, 56, 56);
+}
+.temperature h2 {
+    font-size: 50px;
+    position: relative;
+    right: 25px;
+}
+
+.celcius{
+    font-size: 18px;
+    position: relative;
+    bottom: 20px;
+}
+footer {
+    color: #27214266;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
