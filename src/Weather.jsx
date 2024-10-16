@@ -33,9 +33,9 @@ export default function Weather() {
     name: response.data.name,
     date: new Date(response.data.dt * 1000),
     humidity: response.data.main.humidity,
-    wind: response.data.main.wind,
     description: response.data.weather[0].description,
     icon: response.data.weather[0].icon,  
+    wind: response.data.wind.speed,
   })
   
   }
@@ -43,7 +43,7 @@ export default function Weather() {
   if (weather.ready) {
   return (
     <div className="Weather">
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={search}>
       <div className="row">
         <div className="col-9">
           <input type="search" placeholder="Enter a city..." autoFocus="on" onChange={updateCity}/>
@@ -68,7 +68,6 @@ export default function Weather() {
     </div>
     <div className="col-6">
       <ul>
-        <li>Percipitation: 5%</li>
         <li>Humidity: {weather.humidity}%</li>
         <li>Wind: {weather.wind}km/h</li>
       </ul>
