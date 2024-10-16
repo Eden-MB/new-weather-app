@@ -59,14 +59,14 @@ li {
 
 .temperature h1 {
     position: relative;
-    left: 110px;
+    left: 80px;
     bottom: 20px;
     font-weight:bold;
     font-size: 40px;
     color: black
 }
 .temperature h2 {
-    font-size: 50px;
+    font-size: 60px;
     position: relative;
     right: 8px;
 }
@@ -74,7 +74,7 @@ li {
 .celcius{
     font-size: 18px;
     position: relative;
-    bottom: 20px;
+    bottom: 28px;
 }
 footer {
     color: #27214266;
@@ -86,4 +86,8 @@ footer {
 img {
     position: relative;
     bottom: 16px;
+}
+
+.WeatherDisplay a{
+    text-decoration: none;
 }
