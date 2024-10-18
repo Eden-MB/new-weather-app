@@ -5,6 +5,7 @@ import "./index.css";
 import DisplayDate from "./displayDate.jsx";
 import { WeatherIcon } from './WeatherIcon.jsx';
 import WeatherTemp from './WeatherTemperature.jsx';
+import WeatherForecast from './WeatherForcast.jsx';
 
 export default function Weather() {
     const [city, setCity] = useState("Addis Ababa")
@@ -17,9 +18,9 @@ export default function Weather() {
       handleSubmit();
     }
   function handleSubmit() {
-  let apiKey= "97bed167ec49bff56e6c1b63daef9c86";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric` 
-  axios.get(apiUrl).then(weatherResponse);
+    let apiKey= "97bed167ec49bff56e6c1b63daef9c86";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric` 
+    axios.get(apiUrl).then(weatherResponse);
   }
   function updateCity(event) {
     event.preventDefault();
@@ -36,6 +37,7 @@ export default function Weather() {
     description: response.data.weather[0].description,
     icon: response.data.weather[0].icon,  
     wind: response.data.wind.speed,
+    coordinates: response.data.coord,
   })
   
   }
@@ -53,7 +55,7 @@ export default function Weather() {
       </div>
       </form>
     <div className="row temperature">
-      <div className="col-2"><WeatherIcon state={weather.icon} alt="" />
+      <div className="col-2"><WeatherIcon state={weather.icon} alt="" width={90} height={90}/>
       </div>
       <div className=" col-3"><WeatherTemp celcius={weather.temperature} /></div>
     <div className="col-7"> <h1 className="mt-4"  >{weather.name}</h1></div>
@@ -72,8 +74,11 @@ export default function Weather() {
         <li>Wind: {weather.wind}km/h</li>
       </ul>
     </div>
+    <div className='WeatherForecast '>
+    <WeatherForecast coords={weather.coordinates}/>
     </div>
-    <footer>This project was coded by <strong>Eden Million</strong> and is open-sourced on <strong>GitHub</strong></footer>
+    </div>
+    <footer>This project was coded by <a href="https://github.com/Eden-MB/new-weather-app" target='blank'><strong>Eden Million</strong> </a>and is open-sourced on <a href="https://github.com/Eden-MB/new-weather-app" target='blank'><strong>GitHub</strong></a></footer>
   </div>
   );
   

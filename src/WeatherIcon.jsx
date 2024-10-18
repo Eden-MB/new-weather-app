@@ -28,5 +28,5 @@ export function WeatherIcon(props) {
 
 
 
-  return (<WeatherSvg state={codeMap[props.state]} width={90} height={90} />)
+  return (<WeatherSvg state={codeMap[props.state]} width={props.width} height={props.height} />)
  }
